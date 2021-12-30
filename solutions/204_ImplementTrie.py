@@ -1,3 +1,5 @@
+# problem: https://leetcode.com/problems/implement-trie-prefix-tree/
+
 # Usually we can implement an additional TrieNode class that we can instantiate as nodes of the tree. 
 # Here instead of this I simply used a nested character dictionary to store the tree. This wouldn't be
 # a good idea in a real system as it wouldn't allow you to implement any additional functions/features
