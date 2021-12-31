@@ -156,3 +156,63 @@ class Solution2:
             out.append(seg_tree.query(0, num_loc-1))
             seg_tree.increment(num_loc)
         return out[::-1]
+
+
+# There is another data structure with same time complexity but better constants.
+# This is the Fenwick Tree (aka Binary Indexed Tree). Again the AlgorithmsLive
+# youtube channel has an excellent explanation: 
+# https://www.youtube.com/watch?v=kPaJfAUwViY
+# The code for the Solution class is almost the same as above, except the segment
+# tree is replaced with a Fenwick tree (and the interface is slightly different,
+# as Fenwick tree naturally does prefix sums, and we don't have to specify the
+# left end of the range with index 0)
+
+def get_lsd(n):
+    """taken from stackoverflow
+    https://stackoverflow.com/questions/5520655/return-index-of-least-significant-bit-in-python
+    """
+    return (n&-n).bit_length()-1
+
+
+def get_next_lower(n):
+    return n - (1 << get_lsd(n))
+
+
+def get_next_higher(n):
+    return n + (1 << get_lsd(n))
+
+
+class FenwickTree:
+    def __init__(self, length):
+        self.tree = [0] * length
+    
+    def add_val(self, i, val):
+        idx = i+1
+        while idx <= len(self.tree):
+            self.tree[idx-1] += val
+            idx = get_next_higher(idx)
+        
+    def rangesum(self, i, j):
+        return self.cumsum(j) - self.cumsum(i)
+
+    def cumsum(self, i):
+        out = 0
+        while i != 0:
+            out += self.tree[i-1]
+            i = get_next_lower(i)
+        return out
+
+
+class Solution:
+    def countSmaller(self, nums: List[int]) -> List[int]:
+        MIN_VAL = min(nums)
+        MAX_VAL = max(nums)
+        tree_size = MAX_VAL - MIN_VAL + 1
+
+        fenwick_tree = FenwickTree(tree_size)
+        out = []
+        for num in nums[::-1]:
+            num_loc = num - MIN_VAL
+            out.append(fenwick_tree.cumsum(num_loc))
+            fenwick_tree.add_val(num_loc, 1)
+        return out[::-1]
