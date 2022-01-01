@@ -1,3 +1,28 @@
+# Some problems boil down to querying something within a range in a
+# dynamic array (array gets updated frequently). Fortunately, in a
+# lot of these situations the array size remains the same. This type
+# of situation calls for some very interesting data structures.
+# Naively if we just store the original array and do a range query
+# (e.g. range sum: sum(nums[i:j])), then the range query will have
+# time complexity O(n), which is not great if we have to do many
+# such queries. On the other hand, point updates are O(1), which
+# is nice.
+# One thing we can do is store the prefix array (like a cumsum):
+# prefix_sum[i] = sum(nums[:i]). This way range sum query has time
+# complexity O(1) (sum(nums[i:j]) = prefix_sum[j] - prefix_sum[i])
+# But this comes at the cost of O(n) for point updates, as updating
+# one element in the original array would update all subsequent
+# elements in the prefix sum array. Another issue is that this
+# doesn't work for range min or max queries.
+# We can improve on these naive ideas with some interesting
+# data structures. I will implement two below: Segment Tree and
+# Fenwick Tree.
+# For more information on these, check out the youtube videos
+# on the Algorithms Live channel:
+# https://www.youtube.com/watch?v=kPaJfAUwViY
+# https://www.youtube.com/watch?v=Tr-xEGoByFQ
+
+
 class RangeQuery:
     def __init__(self, vals):
         self.vals = vals
@@ -57,9 +82,6 @@ class PrefixSumAdd(RangeQuery):
             mult = (min(k, j-1) - i + 1)
             self.prefix_sum[k] += mult * val
 
-# cool stuff
-# 1. Segment Tree
-# 2. Fenwick Tree
 
 # Segment Tree
 
