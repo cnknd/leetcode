@@ -1,7 +1,7 @@
 ---
 layout: page
 title: My LeetCode Journey
-tagline: {{ site.tagline }}
+tagline: Lessons learned from grinding LeetCode problems
 ---
 
 ## About
