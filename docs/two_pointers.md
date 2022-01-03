@@ -1,10 +1,10 @@
 ---
 layout: page
-title: {{ site.title }}
+title: My LeetCode Journey
 tagline: {{ site.tagline }}
 ---
 
-## Basic pointers tricks
+## Basics
 
 We start with a warmup: [Two Sum with Sorted Input](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/).
 In this problem we can employ a common trick with pointers that we can use to traverse an array to find the answer we're looking for.
@@ -25,5 +25,19 @@ class Solution:
             else:
                 return [i+1, j+1]
 ```
+
+## More Advanced Examples
+
+* [Container with Most Water](https://leetcode.com/problems/container-with-most-water/)
+* [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+
+## Uses in Linked Lists
+
+Tricks with pointers show up frequently in linked lists. Examples:
+* Reversing a linked list requires 3 pointers: two for the two nodes that we are about to reverse (let's call these `node1` and `node2`), and a third one to hold onto the next node in the list before we execute `node2.next = node1`.
+* Finding the middle of a linked list can be done with `slow` and `fast` pointers, where `slow` travels one node at a time and `fast` travels two nodes at a time. When `fast` gets to the end of the list, `slow` should be at the middle
+* Finding the kth node from the end of the list can also be done with `slow` and `fast` pointers, but here `fast` simply has a head-start of k nodes.
+* There is a [famous algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare) for finding cycles in a linked list that uses `slow` and `fast` pointers.
+
 
 Find out more by [visiting my GitHub project]({{ site.github.repo }}).
