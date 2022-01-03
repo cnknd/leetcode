@@ -1,1 +1,13 @@
 theme: jekyll-theme-cayman
+
+# Setup
+title:            My LeetCode Journey
+tagline:          'Lessons learned from grinding LeetCode problems'
+description:      'Lessons learned from grinding LeetCode problems'
+baseurl:          /
+
+author:
+  name:           'Ran Huo'
+
+github:
+  repo:           https://github.com/cnknd/leetcode
