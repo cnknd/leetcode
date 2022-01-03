@@ -1,4 +1,8 @@
-# {{ site.title}}
+---
+layout: page
+title: {{ site.title }}
+tagline: {{ site.tagline }}
+---
 
 ## Basic pointers tricks
 

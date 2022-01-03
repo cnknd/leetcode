@@ -1,4 +1,8 @@
-# {{ site.title}}
+---
+layout: page
+title: {{ site.title }}
+tagline: {{ site.tagline }}
+---
 
 ## About
 I started doing LeetCode around late November 2021. In these GitHub Pages I will document cool things I've learned since I started.
