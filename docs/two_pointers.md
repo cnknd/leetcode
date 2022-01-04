@@ -68,3 +68,5 @@ Tricks with pointers show up frequently in linked lists. Examples:
 
 
 Find out more by [visiting my GitHub project]({{ site.github.repo }}).
+
+[Back to Home](index.html)
