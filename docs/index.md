@@ -9,5 +9,3 @@ Here are some of the topics I've already written about:
 * [Two Pointer](two_pointers.html)
 * [Heaps](heaps.html)
 * [Dynamic Programming](dp.html)
-
-Find out more by [visiting my GitHub project]({{ site.github.repo }}).

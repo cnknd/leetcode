@@ -81,8 +81,3 @@ This problem actually has a real world application in DNA sequence alignment, wh
 * [0-1 Knapsack Problem](https://en.wikipedia.org/wiki/Knapsack_problem)
 * [Bellman-Ford Single Source Shortest Paths Algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
 * [Floyd-Warshall All Pairs Shortest Paths Algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
-
-
-Find out more by [visiting my GitHub project]({{ site.github.repo }}).
-
-[Back to Home](index.html)
