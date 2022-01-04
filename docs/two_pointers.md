@@ -4,6 +4,8 @@ title: My LeetCode Journey
 tagline: Lessons learned from grinding LeetCode problems
 ---
 
+# Two Pointers
+
 ## Basics
 
 We start with a warmup: [Two Sum with Sorted Input](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/).
