@@ -1,8 +1,3 @@
----
-layout: default
-title: My LeetCode Journey
-tagline: Lessons learned from grinding LeetCode problems
----
 # Dynamic Programming
 
 ## Introduction
@@ -59,8 +54,10 @@ def fib(n):
 
 ## LeetCode HARD
 Problem: [Edit Distance](https://leetcode.com/problems/edit-distance/)
+
 This is actually a fairly straightforward example of DP. There are only two dimensions to consider (conceptually just a bit more difficult than the 1-D Fibonacci sequence example), one for each of the words. So we use `i` and `j` to index into the words. Let's see what the recurrence relation looks like:
 at any point `(i, j)`, we have three choices: remove `word1[i]`, insert `word2[j]` into `i`th position in `word1`, or replace `word1[i]` with `word2[j]` (in this case if `word1[i]` is the same as `word2[j]`, we simply don't count the replacement as an edit). Here is a rough draft of the code (I've implemented basic recursion without memoization, and I've left out the terminal conditions for brevity):
+
 ```python
 def editDistance(i, j, word1, word2):
     a = editDistance(i+1, j, word1, word2) + 1
@@ -70,12 +67,16 @@ def editDistance(i, j, word1, word2):
         c -= 1
     return min(a, b, c)
 ```
-Of course to get the speed up from DP, we'll need to either add memoization to the above recursion or implement bottom-up approach. In either case, both the time and space complexities are `O(M*N)` where `M` and `N` are the lengths of `word1` and `word2`, respectively.
+
+Of course to get the speed up from DP, we'll need to either add memoization to the above recursion or implement bottom-up approach. In either case, both the time and space complexities are `O(M*N)` where `M` and `N` are the lengths of `word1` and `word2`, respectively. You can look at my full solution [here]({{ site.github.repo }}/blob/main/solutions/72_EditDistance.py)
 
 This problem actually has a real world application in DNA sequence alignment, where we need to compute the smallest edit distance between two segments of DNA.
 
 ## Other applications
 
+* [0-1 Knapsack Problem](https://en.wikipedia.org/wiki/Knapsack_problem)
+* [Bellman-Ford Single Source Shortest Paths Algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm)
+* [Floyd-Warshall All Pairs Shortest Paths Algorithm](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
 
 
 Find out more by [visiting my GitHub project]({{ site.github.repo }}).

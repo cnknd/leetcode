@@ -1,9 +1,3 @@
----
-layout: default
-title: My LeetCode Journey
-tagline: Lessons learned from grinding LeetCode problems
----
-
 # Two Pointers
 
 ## Basics
@@ -70,6 +64,9 @@ Tricks with pointers show up frequently in linked lists. Examples:
 
 ## LeetCode HARD
 Problem: [Get the Maximum Score](https://leetcode.com/problems/get-the-maximum-score/)
+
+You can look at my full solution [here]({{ site.github.repo }}/blob/main/solutions/1537_MaxScore.py)
+
 
 Find out more by [visiting my GitHub project]({{ site.github.repo }}).
 

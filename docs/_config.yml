@@ -3,6 +3,9 @@ theme: jekyll-theme-cayman
 author:
   name:           'Ran Huo'
 
+title: My LeetCode Journey
+description: Lessons learned from grinding LeetCode problems
+
 github:
   repo:           https://github.com/cnknd/leetcode
 
