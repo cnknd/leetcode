@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Dynamic Programming
 
 ## Introduction

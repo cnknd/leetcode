@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Two Pointers
 
 ## Basics
