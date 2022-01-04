@@ -54,6 +54,27 @@ def fib(n):
 ```
 
 ## Other Examples
+* [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/): the recurrence relation is `minPathSum((i,j)) = min(minPathSum((i-1,j)), minPathSum((i,j-1))) + grid[i][j]`. The result of the same subproblem `minPathSum((i, j))` can be used to solve multiple larger subproblems `minPathSum((i+1, j))` and `minPathSum((i, j+1))`. Since the results for one row (or column) is only used in computing the results for the subsequent row, we only need to keep one row of intermediate results in memory in the iterative bottom-up approach.
+* [Decode Ways](https://leetcode.com/problems/decode-ways/): we use `i` to index into the string, and the recurrence relation is `numDecodings(i) = numDecodings(i+1) + int(int(s[i:i+2]) <= 26) * numDecodings(i+2)`. Since this problem is one dimensional and we only use the results from `i+1` and `i+2` to calculate the result for `i`, we only need to store two previous results in the iterative bottom-up approach.
+
+## LeetCode HARD
+Problem: [Edit Distance](https://leetcode.com/problems/edit-distance/)
+This is actually a fairly straightforward example of DP. There are only two dimensions to consider (conceptually just a bit more difficult than the 1-D Fibonacci sequence example), one for each of the words. So we use `i` and `j` to index into the words. Let's see what the recurrence relation looks like:
+at any point `(i, j)`, we have three choices: remove `word1[i]`, insert `word2[j]` into `i`th position in `word1`, or replace `word1[i]` with `word2[j]` (in this case if `word1[i]` is the same as `word2[j]`, we simply don't count the replacement as an edit). Here is a rough draft of the code (I've implemented basic recursion without memoization, and I've left out the terminal conditions for brevity):
+```python
+def editDistance(i, j, word1, word2):
+    a = editDistance(i+1, j, word1, word2) + 1
+    b = editDistance(i, j+1, word1, word2) + 1
+    c = editDistance(i+1, j+1, word1, word2) + 1
+    if word1[i] == word2[j]:
+        c -= 1
+    return min(a, b, c)
+```
+Of course to get the speed up from DP, we'll need to either add memoization to the above recursion or implement bottom-up approach. In either case, both the time and space complexities are `O(M*N)` where `M` and `N` are the lengths of `word1` and `word2`, respectively.
+
+This problem actually has a real world application in DNA sequence alignment, where we need to compute the smallest edit distance between two segments of DNA.
+
+## Other applications
 
 
 

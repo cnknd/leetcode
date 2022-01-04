@@ -35,7 +35,7 @@ class Solution:
                 return [i+1, j+1]
 ```
 
-## More Advanced Examples
+## Other Examples
 
 * [Container with Most Water](https://leetcode.com/problems/container-with-most-water/)
 * [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
@@ -68,6 +68,8 @@ Tricks with pointers show up frequently in linked lists. Examples:
 * Finding the kth node from the end of the list can also be done with `slow` and `fast` pointers, but here `fast` simply has a head-start of k nodes.
 * There is a [famous algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_tortoise_and_hare) for finding cycles in a linked list that uses `slow` and `fast` pointers.
 
+## LeetCode HARD
+Problem: [Get the Maximum Score](https://leetcode.com/problems/get-the-maximum-score/)
 
 Find out more by [visiting my GitHub project]({{ site.github.repo }}).
 
